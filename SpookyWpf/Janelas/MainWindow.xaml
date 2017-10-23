@@ -1,0 +1,93 @@
+﻿<Window x:Class="SpookyWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpookyWpf"
+        mc:Ignorable="d"
+        Loaded="OnLoad"
+        x:Name="Janela"
+        Closed="OnClosed"
+        ResizeMode="NoResize"       
+        WindowStartupLocation="CenterScreen"
+        Title="Spooky" SizeToContent="Height" Width="200">
+    <StackPanel Margin="5 5"
+                x:Name="Panel">
+        <Grid Height="5">
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Height" Value="5"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Click="EsterEgg"
+                    IsEnabled="True"
+                    BorderThickness="0"
+                    Background="White"
+                    Cursor="Hand"
+                    Padding="0 2"
+               />
+
+            
+        </Grid>
+
+        <Label Content="Escolha uma opção:"
+               MouseDoubleClick="AbrirPainel"
+               FontWeight="Bold"/>
+        <ComboBox x:Name="cboxOpcao"
+                  SelectedIndex="0">
+            <ComboBoxItem>Mostrar tudo</ComboBoxItem>
+            <ComboBoxItem>Esconder items na lista</ComboBoxItem>
+            <ComboBoxItem>Esconder tudo</ComboBoxItem>
+        </ComboBox>
+        <Button
+            Click="Confirmar">
+            <Grid Width="178">
+
+                <ProgressBar x:Name="bar"
+                             Maximum="100"
+                             Minimum="0"
+                             BorderThickness="0"/>
+                <TextBlock Text="Confirmar"
+                           TextAlignment="Center"/>
+                
+            </Grid>
+        </Button>
+
+        <Grid Margin="0 5 0 0 " >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button
+            
+                Click="Teste"
+                Margin="0 0 2.5 0"
+                Content="Mostrar log"/>
+            <Button
+            
+                Click="BackUP"
+                Margin="2.5 0 0 0"
+                Grid.Column="1"
+                Content="Fazer backup"/>
+        </Grid>
+        <Button 
+            
+            Click="MostrarLista"
+            
+            Content="Modificar lista"
+            Margin="0 5"/>
+
+        
+
+
+
+
+    </StackPanel>
+</Window>
+

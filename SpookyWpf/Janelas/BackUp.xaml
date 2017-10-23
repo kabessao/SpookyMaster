@@ -1,0 +1,83 @@
+﻿<Window x:Class="SpookyWpf.BackUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpookyWpf"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Loaded="OnLoad"
+        Title="BackUp" Height="300" Width="300">
+    <Window.Resources>
+        <Style TargetType="Button" >
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+    </Window.Resources>
+    <Border Padding=" 10">
+        <TabControl x:Name="Tab">
+            <TabItem Header="BackUp">
+                <StackPanel>
+                    <TextBlock Text="Onde o BackUp ficara"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="txtDiretorioPara"
+                                 ToolTip="You're an idiot!"
+                                 Padding="1"
+                                 Margin="0 0 5 0"
+                                 />
+                        <Button Content="Procurar"
+                                Grid.Column="1"
+                                Click="ProcurarPara"/>
+
+
+                    </Grid>         
+
+                </StackPanel>
+                
+            </TabItem>
+            <TabItem Header="Restaurar">
+                <StackPanel>
+                    <TextBlock Text="Onde o BackUp esta?"/>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="txtDiretorioOnde"
+                                 Grid.Column="0"
+                                 Padding="1"
+                                 Margin="0 0 5 0"/>
+
+                        <Button Content="Procurar"
+                                Grid.Column="1"
+                                Click="ProcurarOnde"/>
+
+                    </Grid>
+
+                </StackPanel>
+
+            </TabItem>
+            
+            
+
+
+        </TabControl>
+        
+        
+        
+    </Border>
+
+
+
+</Window>
